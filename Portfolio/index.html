@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Aksar | AI & ML Enthusiast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Portfolio</h1>
+        <button class="nav-toggle" onclick="toggleNav()">Menu</button>
+    </header>
+    
+    <div class="overlay" id="overlay" onclick="hideNav()"></div>
+    
+    <nav id="mobileNav">
+        <ul>
+            <li><a href="#about" title="Learn more about me" onclick="hideNav()"><span>About Me</span></a></li>
+            <li><a href="#projects" title="See my projects" onclick="hideNav()"><span>Projects</span></a></li>
+            <li><a href="#skills" title="Check out my skills" onclick="hideNav()"><span>Skills</span></a></li>
+            <li><a href="#certifications" title="View all certifications" onclick="hideNav()"><span>Certifications</span></a></li>
+            <li><a href="#seminar" title="Check out my seminars" onclick="hideNav()"><span>Seminars</span></a></li>
+            <li><a href="#contact" title="Get in touch" onclick="hideNav()"><span>Contact</span></a></li>
+        </ul>
+    </nav>
+    
+    <main>
+    <section class="intro">
+        <img src="afsu.jpg" alt="Profile Picture" class="profile-picture">
+        <div class="intro-content">
+            <h1>Hi, I'm Mohammed Aksar</h1>
+            <p>AI & ML Enthusiast | Python Backend Developer</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>        
+
+    <section id="about" class="animate-up">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am Mohammed Aksar, a passionate AI & ML enthusiast currently pursuing a B.Sc. in Artificial Intelligence and Machine Learning. With a strong foundation in Python backend development and a keen interest in innovative technologies, I strive to contribute to impactful projects in the field of Artificial Intelligence.</p>
+            <h3>Education</h3>
+            <ul>
+                <li>B.Sc. in Artificial Intelligence and Machine Learning, Nehru Arts and Science College, Coimbatore, Bharathiar University (Expected 2025)</li>
+                <li>12th Grade, Government Higher Secondary School, Karamadai (State Board) - 52%</li>
+                <li>10th Grade, Government Higher Secondary School, Mettupalayam (SSLC) - 76.4%</li>
+            </ul>
+            <h3>Experience</h3>
+            <ul>
+                <li>
+                    Internship: Python for Data Science at Gateway Software Solutions IT & ITES – Coimbatore (May 13, 2024 to May 31, 2024)
+                    <a href="internship certificate.pdf" target="_blank" class="btn-view-certificate" title="View Internship Certificate">View Certificate</a>
+                </li>
+            </ul>            
+            <h3>Personal Details</h3>
+            <p>Date of Birth: February 15, 2003</p>
+            <p>Address: 12-S2 Madhayan Layout Katoor Mettupalayam – 641301</p>
+        </div>
+    </section>
+
+    <section id="projects" class="animate-up">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Health Advisor</h3>
+                <p>This project involves developing a health advisor system using Python. It provides health recommendations based on user inputs and historical health data.</p>
+            </div>
+            <div class="project">
+                <h3>Animal Species Prediction</h3>
+                <p>Using Django, this project predicts the species of animals based on their characteristics. It leverages machine learning models for accurate predictions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="animate-up">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skill">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>R Programming</li>
+                    <li>Django</li>
+                    <li>MySQL</li>
+                    <li>Pandas</li>
+                    <li>NumPy</li>
+                    <li>Visual Studio Code</li>
+                    <li>Windows</li>
+                    <li>RPA using UiPath</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Problem Solving</li>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
+                    <li>Creativity</li>
+                    <li>Adaptability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="animate-up">
+        <div class="container">
+            <h2>Certifications</h2>
+            
+            <div class="certificate">
+                <h3>School Level Competition in Hackathon</h3>
+                <p>Participated in a school-level hackathon competition and earned a certification for innovative problem-solving skills.</p>
+                <button class="btn pdf-btn" onclick="window.open('cert.pdf')">View Certificate</button>
+            </div>
+            
+            <div class="certificate">
+                <h3>Inter College Level Paper Presentation</h3>
+                <p>Presented a paper at an inter-college event, showcasing skills in research and presentation.</p>
+                <button class="btn pdf-btn" onclick="window.open('path-to-your-certificate-paper-presentation.pdf')">View Certificate</button>
+            </div>
+            
+            <div class="certificate">
+                <h3>State Level Workshop on Patent Drafting</h3>
+                <p>Completed a workshop focused on patent drafting, gaining insights into intellectual property protection.</p>
+                <button class="btn pdf-btn" onclick="window.open('path-to-your-certificate-patent-drafting.pdf')">View Certificate</button>
+            </div>
+            
+            <div class="certificate">
+                <h3>International Level Workshop on Data Science Using Python</h3>
+                <p>Participated in an international workshop on data science, learning advanced techniques in Python programming.</p>
+                <button class="btn pdf-btn" onclick="window.open('Data Science with Python.pdf')">View Certificate</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="seminar" class="animate-up">
+        <div class="container">
+            <h2>Seminars & Presentations</h2>
+            
+            <!-- Seminar Images -->
+            <div class="seminar-images">
+                <h3>Seminar Images</h3>
+                <img src="seminar image1.jpg" alt="Seminar Image 1" class="seminar-img">
+                <img src="seminar image2.jpg" alt="Seminar Image 2" class="seminar-img">
+            </div>
+    
+            <!-- Seminar Videos -->
+            <div class="seminar-videos">
+                <h3>Seminar Video</h3>
+                <video controls class="seminar-video">
+                    <source src="seminar video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>    
+    
+    <section id="contact" class="animate-up">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you have any questions or would like to get in touch, feel free to contact me via:</p>
+            <ul>
+                <li><a href="mailto:aksar8030@gmail.com">Email: aksar8030@gmail.com</a></li>
+                <li><a href="tel:+919894331008">Phone: +91 98943 31008</a></li>
+                <li><a href="https://www.linkedin.com/in/mohammed-aksar-feb15" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+    </section>    
+    </main>
+    <script>
+        // Function to toggle navigation visibility
+        function toggleNav() {
+            const nav = document.getElementById('mobileNav');
+            const overlay = document.getElementById('overlay');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    
+        // Function to hide the navigation and overlay when touching outside or selecting a nav item
+        function hideNav() {
+            const nav = document.getElementById('mobileNav');
+            const overlay = document.getElementById('overlay');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    
+        // Script to add the 'visible' class when the section is in the viewport
+        document.addEventListener("scroll", function() {
+            const elements = document.querySelectorAll('.animate-up');
+            const windowHeight = window.innerHeight;
+    
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect().top;
+    
+                // Check if the element is in the viewport
+                if (position < windowHeight) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+    </script>    
+</body>
+</html>
