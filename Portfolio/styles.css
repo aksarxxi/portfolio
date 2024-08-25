@@ -1,0 +1,655 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e;
+    color: #e5e5e5;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #16213e;
+    color: #f5f6fa;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1000;
+}
+
+/* Navigation */
+nav {
+    background: #0f3460;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.4s ease, background 0.5s ease;
+    z-index: 900;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    margin: 1.5rem 0;
+}
+
+nav ul li a {
+    color: #dcdde1;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: color 0.4s ease;
+}
+
+nav ul li a:hover {
+    color: #e94560;
+    text-shadow: 0 0 5px #e94560;
+}
+
+/* Toggle Button */
+.nav-toggle {
+    background-color: #e94560;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+    border-radius: 5px;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background-color: #ff4b5c;
+    transform: scale(1.1);
+}
+
+/* Animation for showing and hiding the nav */
+nav.active {
+    left: 0;
+}
+
+/* Scroll Animations */
+.animate-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Media Queries */
+@media screen and (min-width: 768px) {
+    nav {
+        height: auto;
+        position: relative;
+        left: 0;
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
+
+/* Overlay for Mobile Nav */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 800;
+    transition: opacity 0.4s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #16213e;
+    padding: 1.5rem;
+    text-align: center;
+    color: #f1f1f1;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-shadow: 0 0 5px #ff4b5c;
+}
+
+/* Dark Button Styles */
+button {
+    background-color: #1b1b2f;
+    color: #fff;
+    border: 2px solid #e94560;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e94560;
+    transform: scale(1.05);
+}
+
+
+/* Add scroll animation styles */
+.animate-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-up:nth-child(odd) {
+    transition-delay: 0.2s;
+}
+
+.animate-up:nth-child(even) {
+    transition-delay: 0.4s;
+}
+
+.nav-toggle {
+    background-color: #555;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100; /* Ensure it stays above the nav */
+    transition: background-color 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background-color: #666;
+}
+
+button.nav-toggle {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Intro Section */
+.intro {
+    padding: 100px 20px;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-align: right; /* Ensure text aligns to the right */
+    animation: fadeIn 2s ease-in-out; /* Fade in effect */
+}
+
+.profile-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Full height of the viewport */
+    width: auto;
+    object-fit: cover; /* Maintain aspect ratio */
+    z-index: 0;
+    opacity: 0.8; /* Optional: Slight transparency */
+    animation: fadeInAndScale 2s ease-in-out;
+}
+
+.intro-content {
+    z-index: 1; /* Ensure content stays above the picture */
+    margin-right: 20px; /* Space from the right edge */
+}
+
+.intro h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: slideInLeft 1s ease-in-out;
+    color: #fff;
+}
+
+.intro p {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    animation: slideInRight 1s ease-in-out;
+    color: #fff;
+}
+
+.intro a.btn {
+    background-color: #e94560;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    transition: background-color 0.4s, transform 0.4s;
+    z-index: 1; /* Ensure the button stays above the picture */
+}
+
+.intro a.btn:hover {
+    background-color: #a83252;
+    transform: scale(1.1);
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInAndScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* About Me Section */
+.about {
+    background-color: #0f3460;
+    color: #fff;
+    padding: 60px 20px;
+    animation: pullUp 1.5s ease-in-out;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about p, .about ul {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.btn-view-certificate {
+    display: inline-block;
+    padding: 6px 12px; /* Reduced padding */
+    background-color: #e94560;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    transition: background-color 0.4s, transform 0.4s;
+}
+
+.btn-view-certificate:hover {
+    background-color: #a83252;
+    transform: scale(1.05); /* Grow on hover */
+}
+
+.about ul {
+    list-style-type: none;
+}
+
+.about ul li {
+    margin: 15px 0;
+}
+
+/* Projects Section */
+.projects {
+    background-color: #16213e;
+    color: #fff;
+    padding: 60px 20px;
+    animation: pullUp 1.5s ease-in-out;
+}
+
+.projects h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.project {
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.project h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.project .btn {
+    background-color: #e94560;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    display: inline-block;
+    transition: background-color 0.4s, transform 0.4s;
+}
+
+.project .btn:hover {
+    background-color: #a83252;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/* Skills Section */
+.skills {
+    background-color: #0f3460;
+    color: #fff;
+    padding: 60px 20px;
+    animation: pullUp 1.5s ease-in-out;
+}
+
+.skills h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.skill {
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.skill h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.skill ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill ul li {
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+
+/* Certificates Section */
+.certificates-page {
+    background-color: #0f3460;
+    color: #eaeaea;
+    padding: 60px 20px;
+    animation: pullUp 1.5s ease-in-out;
+}
+
+.certificates-page h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.certificate {
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.certificate h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.certificate p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.certificate img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #444;
+    border-radius: 10px;
+}
+
+.certifications .pdf-btn {
+    background-color: #e94560;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.certifications .pdf-btn:hover {
+    background-color: #a83252;
+    transform: scale(1.05);
+}
+
+.certifications .pdf-btn:active {
+    transform: scale(0.95);
+}
+
+/* Seminar Section Styling */
+.seminar-section {
+    padding: 80px 40px; /* Increased padding for more breathing space */
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.seminar-section h2, .seminar-section h3 {
+    text-align: center;
+    margin-bottom: 50px; /* Added more margin below headings for spacing */
+    font-size: 2.5rem;
+}
+
+.seminar-images, .seminar-videos {
+    display: flex;
+    justify-content: space-evenly; /* Spread elements more evenly */
+    gap: 40px; /* Increased gap between images/videos */
+    flex-wrap: wrap;
+    padding: 20px 0; /* Added vertical padding for extra spacing */
+}
+
+.seminar-img {
+    width: 320px; /* Slightly increased width */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+    transition: transform 0.3s ease; /* Smooth scale animation */
+}
+
+.seminar-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for interactivity */
+}
+
+.seminar-video {
+    width: 480px; /* Increased video width */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for videos too */
+    transition: transform 0.3s ease; /* Smooth scale animation */
+}
+
+.seminar-video:hover {
+    transform: scale(1.05); /* Slight zoom on hover for videos */
+}
+
+/* Contact Section */
+.contact {
+    background-color: #0f3460;
+    color: #fff;
+    padding: 60px 20px;
+    animation: pullUp 1.5s ease-in-out;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.contact p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact ul li {
+    margin: 15px 0;
+}
+
+.contact a {
+    color: #e94560;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pullUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
