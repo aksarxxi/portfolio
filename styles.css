@@ -104,6 +104,18 @@ nav.active {
     transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+    #about p {
+        text-align: left; /* Ensures the text is left-aligned */
+        width: 100%; /* Takes up the full width of the mobile screen */
+        margin: 0 10px; /* Adds a small margin on the sides for spacing */
+    }
+
+    .container {
+        padding: 10px 20px; /* Reduces padding for mobile screens */
+    }
+}
+
 /* Responsive Media Queries */
 @media screen and (min-width: 768px) {
     nav {
