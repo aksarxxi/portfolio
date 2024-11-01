@@ -109,45 +109,19 @@ nav.active {
 .content-box {
     background-color: #1a1a2e;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     padding: 20px;
     margin: 20px auto; /* Centers the box */
     width: auto;
     max-width: 90%; /* Sets a reasonable width limit */
 }
 
-/* Center-Align Headings in Content Boxes */
-.content-box h2, .content-box h3 {
-    text-align: center; /* Centers the headings */
-    margin: 0 auto; /* Centers within the box */
-    padding-bottom: 10px; /* Adds spacing below the heading */
-    font-size: 2rem; /* Ensures a uniform font size for headers */
-}
-
-/* Additional Margin for Larger Screens */
-@media (min-width: 768px) {
-    .content-box h2, .content-box h3 {
-        padding-bottom: 15px; /* More space below heading */
-        font-size: 2.2rem; /* Slightly larger font size for desktop */
-    }
-}
-
-
 /* Wider Box for About Me Section on Larger Screens */
 @media (min-width: 768px) {
     #about .content-box {
-        max-width: 900px; /* Increases max-width for about section */
+        max-width: 800px; /* Increases max-width for about section */
         line-height: 1.8; /* Adds more line spacing for readability */
         padding: 25px 40px; /* Extra padding for spacious look */
-    }
-}
-
-/* Additional Style for Mobile */
-@media (max-width: 768px) {
-    #about .content-box {
-        font-size: 0.9rem; /* Smaller font size on mobile */
-        line-height: 1.4; /* Compact line height for mobile */
-        max-width: 100%;
     }
 }
 
@@ -164,80 +138,29 @@ nav.active {
     }
 }
 
-/* General Alignment for Mobile */
-@media (max-width: 768px) {
-    body, .container, section, #about, .intro-content {
-        text-align: left; /* Aligns text to the left */
-        padding: 0 10px; /* Adds space on mobile sides */
-        width: 100%; /* Full width on mobile */
-        margin: 0 auto; /* Centers the container for mobile */
-    }
-
-    .intro h1, .intro p, .intro-content h1, .intro-content p {
-        text-align: left; /* Left-aligns intro text */
-        margin-left: 0; /* Removes any right margin */
-    }
-}
-
-/* General Content Box Styling */
+/* Ensure Content Boxes Span Full Width */
 .content-box {
-    background-color: #1a1a2e; /* Box color matching the theme */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    padding: 20px; /* Padding inside the box */
-    margin: 20px 10px; /* Space around the box */
-    width: auto;
+    width: 100%; /* Full width */
+    max-width: none; /* Removes width constraint */
+    margin: 0; /* Removes side margins */
+    padding: 20px; /* Padding for readability */
+    text-align: left; /* Aligns text to the left */
+    background-color: #1a1a2e; /* Keeps background color */
 }
 
-/* Specific Section Box for Mobile */
-@media (max-width: 768px) {
-    .content-box {
-        padding: 15px; /* Smaller padding on mobile */
-        margin: 10px 5px; /* Smaller margin on mobile */
-        width: auto; /* Ensures the box takes full width on mobile */
-    }
-
-    section {
-        padding: 10px 0; /* Reduced padding within the sections */
-    }
-
-    .intro-content {
-        padding: 10px;
-    }
-
-    .intro h1, .intro p {
-        font-size: 1.5rem; /* Reduce font size for intro text */
-    }
+/* General Styling for Full Width and Left Alignment */
+body, section, .container {
+    width: 100%; /* Full width */
+    max-width: none; /* No width restriction */
+    padding: 0; /* No padding on sides */
+    margin: 0; /* No margin */
+    text-align: left; /* Align text to the left */
 }
 
-/* Button Adjustments */
-@media (max-width: 768px) {
-    .btn, .btn-view-certificate, .intro a.btn {
-        padding: 10px 20px; /* Adjust button padding for mobile */
-        font-size: 1rem; /* Font size adjustment */
-        border-radius: 8px; /* Rounder buttons */
-    }
-}
-
-/* Ensure the Container Is Well Centered */
-.container {
-    max-width: 1000px; /* Limit the width to avoid stretching */
-    margin: 0 auto; /* Center content */
-    padding: 20px;
-}
-
-/* Adjust Intro Section */
-@media (max-width: 768px) {
-    .intro {
-        display: block; /* Stacks content vertically on mobile */
-        padding: 50px 10px; /* Reduces padding */
-        text-align: left; /* Ensures left-aligned text */
-        height: auto; /* Allows auto height */
-    }
-    .profile-picture {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Auto height for aspect ratio */
-    }
+.content-box h2, .content-box h3 {
+    text-align: left; /* Left-aligns headings */
+    font-size: 2rem;
+    padding-left: 10px; /* Adds slight padding for spacing */
 }
 
 /* Optimize Button Styling */
@@ -444,8 +367,12 @@ section {
 }
 
 .container {
-    padding: 20px 40px; /* Adds padding inside the container for more breathing room */
-    line-height: 1.8; /* Improves readability of text */
+    width: 100%; /* Full width */
+    max-width: none; /* Remove width constraint */
+    margin: 0; /* Remove centering margin */
+    padding: 20px 20px;
+    text-align: left; /* Align text to the left */
+    line-height: 1.8;
 }
 
 .no-bullets {
@@ -494,12 +421,12 @@ section {
 }
 
 #about {
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Ensures horizontal centering */
-    padding: 40px 20px; /* Adds padding around the section */
-    width: 80%; /* Adjust the width to avoid full screen stretch */
-    line-height: 1.6; /* Adjusts the line height for better readability */
-  }
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove horizontal centering */
+    padding: 40px 20px;
+    width: 100%; /* Full width */
+    line-height: 1.6;
+}
   
 
 .about ul {
@@ -739,82 +666,4 @@ section {
 
 .contact a:hover {
     text-decoration: underline;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes pullUp {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    nav ul li a {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    nav ul li a {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
 }
