@@ -102,7 +102,131 @@ nav.active {
 .animate-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
 
+/* Responsive Media Queries */
+@media screen and (min-width: 768px) {
+    nav {
+        height: auto;
+        position: relative;
+        left: 0;
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
+
+/* Overlay for Mobile Nav */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 800;
+    transition: opacity 0.4s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Apply animations to intro section */
+.intro h1 {
+    font-size: 4rem;
+    color: #fff;
+    animation: bounceIn 1.5s ease-out forwards; /* Bounce in effect */
+}
+
+.intro p {
+    font-size: 1.7rem;
+    color: #fff;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Slight delay for staggered effect */
+}
+
+
+
+/* Intro Name (h1) Animation */
+.intro h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: slideInLeft 1s ease-in-out; /* Slide in from the left */
+    color: #fff;
+}
+
+/* Intro Description (p) Animation */
+.intro p {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    animation: slideInRight 1s ease-in-out; /* Slide in from the right */
+    color: #fff;
+}
+
+/* Keyframes for Sliding Animations */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%); /* Start from off-screen (left) */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* End at the original position */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%); /* Start from off-screen (right) */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* End at the original position */
+        opacity: 1;
+    }
+}
+
+/* Button Animation */
+.intro a.btn {
+    background-color: #e94560;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.6s; /* Delay for button to appear last */
+    transition: background-color 0.4s, transform 0.4s;
+    z-index: 1;
+}
+
+.intro a.btn:hover {
+    background-color: #a83252;
+    transform: scale(1.1);
+}
+
+/* Animation Triggered by .visible Class */
+.intro.visible h1 {
+    animation: fadeInLeft 1.2s ease-out forwards;
+}
+
+.intro.visible p {
+    animation: fadeInRight 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.intro.visible a.btn {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.6s;
 }
 
 /* General Content Box Styling */
@@ -115,6 +239,20 @@ nav.active {
     width: auto;
     max-width: 90%; /* Sets a reasonable width limit */
 }
+
+/* Default animation state */
+.animate-up {
+    opacity: 0;
+    transform: translateY(50px); /* Start position of the animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation triggered on scroll */
+.animate-up.visible {
+    opacity: 1;
+    transform: translateY(0); /* End position of the animation */
+}
+
 
 /* Wider Box for About Me Section on Larger Screens */
 @media (min-width: 768px) {
@@ -310,14 +448,14 @@ html {
 .intro h1 {
     font-size: 4rem;
     margin-bottom: 10px;
-    animation: slideInLeft 1s ease-in-out;
+    animation: slideInLeft 2s ease-in-out;
     color: #fff;
 }
 
 .intro p {
     font-size: 1.7rem;
     margin-bottom: 20px;
-    animation: slideInRight 1s ease-in-out;
+    animation: slideInRight 2s ease-in-out;
     color: #fff;
 }
 
