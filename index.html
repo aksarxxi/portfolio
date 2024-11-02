@@ -17,6 +17,7 @@
     <nav id="mobileNav">
         <ul>
             <li><a href="#about" title="Learn more about me" onclick="hideNav()"><span>About Me</span></a></li>
+            <li><a href="#experience" title="Check out my experience" onclick="hideNav()"><span>Experience</span></a></li>
             <li><a href="#projects" title="See my projects" onclick="hideNav()"><span>Projects</span></a></li>
             <li><a href="#skills" title="Check out my skills" onclick="hideNav()"><span>Skills</span></a></li>
             <li><a href="#certifications" title="View all certifications" onclick="hideNav()"><span>Certifications</span></a></li>
@@ -48,11 +49,13 @@
                 <li><strong>B.Sc. in Artificial Intelligence and Machine Learning</strong>, Nehru Arts and Science College, CGPA: 7.2 (2025)</li>
                 <li><strong>12th Grade</strong>, Government Higher Secondary School, Karamadai, Percentage: 52% (2020)</li>
                 <li><strong>10th Grade</strong>, Government Higher Secondary School, Mettupalayam, Percentage: 76.4% (2018)</li>
-            </ul></div>
-    
-            <h3>Experience</h3>
-            <div class="content-box">
-            <ul class="no-bullets">
+            </ul></div></div>
+
+        <section id="experience" class="animate-up">
+            <div class="container">
+                <h3>Experience</h3>
+                <div class="content-box">
+                    <ul class="no-bullets">
                 <li>
                     <strong>Internship: Python for Data Science</strong> – Gateway Software Solutions IT & ITES, Coimbatore (May 13, 2024 to May 31, 2024)
                     <a href="internship certificate.pdf" target="_blank" class="btn-view-certificate" title="View Internship Certificate">View Certificate</a>
@@ -66,7 +69,8 @@
                 <li>
                     <strong>Brand Promoter, Samsung</strong> – Promoted Samsung products in a high-pressure retail environment, developing skills in customer relations, time management, and sales (2021 - 2022).
                 </li>
-            </ul></div>
+            </ul></div></div>
+    </section>
     
             <h3>Personal Details</h3>
             <div class="content-box">
@@ -78,16 +82,27 @@
     <section id="projects" class="animate-up">
         <div class="container">
             <h2>Projects</h2>
+    
             <div class="content-box">
-                <h3>Health Advisor</h3>
-                <p>This project involves developing a health advisor system using Python. It provides health recommendations based on user inputs and historical health data.</p>
+                <h3>Health Advisor System</h3>
+                <p>
+                    The Health Advisor System is a Python-based application that provides personalized health recommendations by calculating the Body Mass Index (BMI) from a user's height and weight. The system prompts the user to input their height and weight, calculates their BMI, and then offers advice based on the results.
+                    Depending on the BMI value, the system suggests appropriate actions, such as maintaining a healthy diet, increasing physical activity, or consulting a healthcare professional. The project is designed to be user-friendly, ensuring that health advice is both accessible and easy to understand.
+                </p>
+                <p><strong>Technologies Used:</strong> Python, BMI Calculation, Tkinter.</p>
             </div>
+    
             <div class="content-box">
                 <h3>Animal Species Prediction</h3>
-                <p>Using Django, this project predicts the species of animals based on their characteristics. It leverages machine learning models for accurate predictions.</p>
+                <p>
+                    This web-based application, built using Django, predicts animal species based on user input or image uploads. It utilizes machine learning models trained on datasets from Kaggle to classify species such as tigers, pandas, and elephants. Users can either input characteristics or upload images, and the system returns predictions along with confidence levels, offering an interactive and educational experience.
+                </p>
+                <p><strong>Technologies Used:</strong> Django, Python, TensorFlow, Keras, Kaggle Datasets.</p>
             </div>
+    
         </div>
     </section>
+    
 
     <section id="skills" class="animate-up">
         <div class="container">
@@ -121,29 +136,28 @@
     <section id="certifications" class="animate-up">
         <div class="container">
             <h2>Certifications</h2>
-            
             <div class="content-box">
-                <h3>School Level Competition in Hackathon</h3>
-                <p>Participated in a school-level hackathon competition and earned a certification for innovative problem-solving skills.</p>
-                <button class="btn pdf-btn" onclick="window.open('Hackathon - Inter Department.pdf')">View Certificate</button>
+                <h3>International Level Workshop on Data Science Using Python</h3>
+                <p>Participated in an international workshop on data science, learning advanced techniques in Python programming.</p>
+                <button class="btn pdf-btn" onclick="window.open('Data Science with Python.pdf')">View Certificate</button>
             </div>
-            
-            <div class="content-box">
-                <h3>Inter College Level Paper Presentation</h3>
-                <p>Presented a paper at an inter-college event, showcasing skills in research and presentation.</p>
-                <button class="btn pdf-btn" onclick="window.open('Paper Presentation - Inter College level.pdf')">View Certificate</button>
-            </div>
-            
+
             <div class="content-box">
                 <h3>State Level Workshop on Patent Drafting</h3>
                 <p>Completed a workshop focused on patent drafting, gaining insights into intellectual property protection.</p>
                 <button class="btn pdf-btn" onclick="window.open('Patent Drafting - State level.pdf')">View Certificate</button>
             </div>
-            
+
+                        <div class="content-box">
+                <h3>Inter College Level Paper Presentation</h3>
+                <p>Presented a paper at an inter-college event, showcasing skills in research and presentation.</p>
+                <button class="btn pdf-btn" onclick="window.open('Paper Presentation - Inter College level.pdf')">View Certificate</button>
+            </div>
+
             <div class="content-box">
-                <h3>International Level Workshop on Data Science Using Python</h3>
-                <p>Participated in an international workshop on data science, learning advanced techniques in Python programming.</p>
-                <button class="btn pdf-btn" onclick="window.open('Data Science with Python.pdf')">View Certificate</button>
+                <h3>School Level Competition in Hackathon</h3>
+                <p>Participated in a school-level hackathon competition and earned a certification for innovative problem-solving skills.</p>
+                <button class="btn pdf-btn" onclick="window.open('Hackathon - Inter Department.pdf')">View Certificate</button>
             </div>
         </div>
     </section>
@@ -179,7 +193,8 @@
                 <li><a href="mailto:aksar8030@gmail.com">Email: aksar8030@gmail.com</a></li>
                 <li><a href="tel:+919894331008">Phone: +91 98943 31008</a></li>
                 <li><a href="https://www.linkedin.com/in/mohammed-aksar-feb15" target="_blank">LinkedIn</a></li>
-            </ul>
+                <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
+            </ul>            
         </div>
         </div>
     </section>    
@@ -193,7 +208,7 @@
             overlay.classList.toggle('active');
         }
     
-        // Function to hide the navigation and overlay when touching outside or selecting a nav item
+        // Function to hide the navigation and overlay when clicking outside or selecting a nav item
         function hideNav() {
             const nav = document.getElementById('mobileNav');
             const overlay = document.getElementById('overlay');
@@ -201,20 +216,24 @@
             overlay.classList.remove('active');
         }
     
-        // Script to add the 'visible' class when the section is in the viewport
-        document.addEventListener("scroll", function() {
+        // Use IntersectionObserver to add the 'visible' class when sections enter the viewport
+        document.addEventListener("DOMContentLoaded", function() {
             const elements = document.querySelectorAll('.animate-up');
-            const windowHeight = window.innerHeight;
+            const options = {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
     
-            elements.forEach(element => {
-                const position = element.getBoundingClientRect().top;
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Add 'visible' class
+                        observer.unobserve(entry.target); // Stop observing after triggering
+                    }
+                });
+            }, options);
     
-                // Check if the element is in the viewport
-                if (position < windowHeight) {
-                    element.classList.add('visible');
-                }
-            });
+            elements.forEach(element => observer.observe(element));
         });
-    </script>    
+    </script>          
 </body>
 </html>
