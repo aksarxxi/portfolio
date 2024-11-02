@@ -229,6 +229,39 @@ nav.active {
     animation-delay: 0.6s;
 }
 
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    /* Reduce font size for readability on small screens */
+    body {
+        font-size: 16px; /* Decrease font size */
+        line-height: 1.5; /* Adjust line height for readability */
+    }
+
+    /* Content Box Adjustments */
+    .content-box {
+        padding: 15px; /* Reduce padding inside content box */
+        margin-bottom: 20px; /* Add some space between content boxes */
+    }
+
+    /* Reduce heading sizes */
+    h2, h3 {
+        font-size: 1.5rem; /* Smaller heading size */
+    }
+
+    /* Paragraph adjustments */
+    p {
+        font-size: 1rem; /* Decrease font size for paragraphs */
+        margin-bottom: 15px; /* Reduce space below paragraphs */
+    }
+    
+    /* Button size adjustment */
+    a.btn {
+        padding: 10px 15px; /* Reduce button padding */
+        font-size: 0.9rem; /* Reduce button text size */
+    }
+}
+
 /* General Content Box Styling */
 .content-box {
     background-color: #1a1a2e;
