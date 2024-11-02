@@ -803,6 +803,27 @@ section {
     transform: scale(1.05); /* Slight zoom on hover for videos */
 }
 
+/* General Video Styling */
+video {
+    width: 100%; /* Make the video responsive to the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    display: block; /* Removes inline element spacing */
+    margin: 0 auto; /* Centers the video */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+    video {
+        width: 100%; /* Ensure video takes up full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+        padding: 0; /* Remove any padding that may affect alignment */
+        margin: 0 auto; /* Center the video horizontally */
+    }
+}
+
+
 /* Contact Section */
 .contact {
     background-color: #0f3460;
