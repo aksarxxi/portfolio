@@ -1,861 +1,314 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Global Styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a2e;
-    color: #e5e5e5;
-    line-height: 1.6;
-}
-
-/* Header */
-header {
-    background: #16213e;
-    color: #f5f6fa;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 1000;
-}
-
-/* Navigation */
-nav {
-    background: #0f3460;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: left 0.4s ease, background 0.5s ease;
-    z-index: 900;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-nav ul li {
-    margin: 1.5rem 0;
-}
-
-nav ul li a {
-    color: #dcdde1;
-    text-decoration: none;
-    font-size: 1.8rem;
-    font-weight: bold;
-    transition: color 0.4s ease;
-}
-
-nav ul li a:hover {
-    color: #e94560;
-    text-shadow: 0 0 5px #e94560;
-}
-
-/* Toggle Button */
-.nav-toggle {
-    background-color: #e94560;
-    border: none;
-    color: white;
-    padding: 0.8rem 1.2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1100;
-    border-radius: 5px;
-    transition: background-color 0.4s ease, transform 0.3s ease;
-}
-
-.nav-toggle:hover {
-    background-color: #ff4b5c;
-    transform: scale(1.1);
-}
-
-/* Animation for showing and hiding the nav */
-nav.active {
-    left: 0;
-}
-
-/* Scroll Animations */
-.animate-up {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.animate-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Media Queries */
-@media screen and (min-width: 768px) {
-    nav {
-        height: auto;
-        position: relative;
-        left: 0;
-        display: block;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .nav-toggle {
-        display: none;
-    }
-}
-
-/* Overlay for Mobile Nav */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 800;
-    transition: opacity 0.4s ease;
-}
-
-.overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-/* Apply animations to intro section */
-.intro h1 {
-    font-size: 4rem;
-    color: #fff;
-    animation: bounceIn 1.5s ease-out forwards; /* Bounce in effect */
-}
-
-.intro p {
-    font-size: 1.7rem;
-    color: #fff;
-    animation: fadeIn 1.5s ease-out forwards;
-    animation-delay: 0.5s; /* Slight delay for staggered effect */
-}
-
-
-
-/* Intro Name (h1) Animation */
-.intro h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    animation: slideInLeft 1s ease-in-out; /* Slide in from the left */
-    color: #fff;
-}
-
-/* Intro Description (p) Animation */
-.intro p {
-    font-size: 1.7rem;
-    margin-bottom: 20px;
-    animation: slideInRight 1s ease-in-out; /* Slide in from the right */
-    color: #fff;
-}
-
-/* Keyframes for Sliding Animations */
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%); /* Start from off-screen (left) */
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0); /* End at the original position */
-        opacity: 1;
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%); /* Start from off-screen (right) */
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0); /* End at the original position */
-        opacity: 1;
-    }
-}
-
-/* Button Animation */
-.intro a.btn {
-    background-color: #e94560;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 15px 30px;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 0.6s; /* Delay for button to appear last */
-    transition: background-color 0.4s, transform 0.4s;
-    z-index: 1;
-}
-
-.intro a.btn:hover {
-    background-color: #a83252;
-    transform: scale(1.1);
-}
-
-/* Animation Triggered by .visible Class */
-.intro.visible h1 {
-    animation: fadeInLeft 1.2s ease-out forwards;
-}
-
-.intro.visible p {
-    animation: fadeInRight 1.2s ease-out forwards;
-    animation-delay: 0.3s;
-}
-
-.intro.visible a.btn {
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 0.6s;
-}
-
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    /* Reduce font size for readability on small screens */
-    body {
-        font-size: 16px; /* Decrease font size */
-        line-height: 1.5; /* Adjust line height for readability */
-    }
-
-    /* Content Box Adjustments */
-    .content-box {
-        padding: 15px; /* Reduce padding inside content box */
-        margin-bottom: 20px; /* Add some space between content boxes */
-    }
-
-    /* Reduce heading sizes */
-    h2, h3 {
-        font-size: 1.5rem; /* Smaller heading size */
-    }
-
-    /* Paragraph adjustments */
-    p {
-        font-size: 1rem; /* Decrease font size for paragraphs */
-        margin-bottom: 15px; /* Reduce space below paragraphs */
-    }
-    
-    /* Button size adjustment */
-    a.btn {
-        padding: 10px 15px; /* Reduce button padding */
-        font-size: 0.9rem; /* Reduce button text size */
-    }
-}
-
-/* General Content Box Styling */
-.content-box {
-    background-color: #1a1a2e;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    margin: 20px auto; /* Centers the box */
-    width: auto;
-    max-width: 90%; /* Sets a reasonable width limit */
-}
-
-/* Default animation state */
-.animate-up {
-    opacity: 0;
-    transform: translateY(50px); /* Start position of the animation */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Animation triggered on scroll */
-.animate-up.visible {
-    opacity: 1;
-    transform: translateY(0); /* End position of the animation */
-}
-
-
-/* Wider Box for About Me Section on Larger Screens */
-@media (min-width: 768px) {
-    #about .content-box {
-        max-width: 800px; /* Increases max-width for about section */
-        line-height: 1.8; /* Adds more line spacing for readability */
-        padding: 25px 40px; /* Extra padding for spacious look */
-    }
-}
-
-/* Adjust for Mobile Screens */
-@media (max-width: 768px) {
-    .content-box {
-        padding: 15px;
-        margin: 10px 5px;
-        width: auto;
-    }
-    #about .content-box {
-        max-width: 100%; /* Full width on mobile */
-        padding: 15px; /* Reduces padding for compact view */
-    }
-}
+/* RESET */
 
-/* Ensure Content Boxes Span Full Width */
-.content-box {
-    width: 100%; /* Full width */
-    max-width: none; /* Removes width constraint */
-    margin: 0; /* Removes side margins */
-    padding: 20px; /* Padding for readability */
-    text-align: left; /* Aligns text to the left */
-    background-color: #1a1a2e; /* Keeps background color */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
 }
 
-/* General Styling for Full Width and Left Alignment */
-body, section, .container {
-    width: 100%; /* Full width */
-    max-width: none; /* No width restriction */
-    padding: 0; /* No padding on sides */
-    margin: 0; /* No margin */
-    text-align: left; /* Align text to the left */
+html{
+scroll-behavior:smooth;
 }
 
-.content-box h2, .content-box h3 {
-    text-align: left; /* Left-aligns headings */
-    font-size: 2rem;
-    padding-left: 10px; /* Adds slight padding for spacing */
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
 }
 
-/* Optimize Button Styling */
-@media (max-width: 768px) {
-    .btn, .btn-view-certificate, .intro a.btn {
-        padding: 10px 15px; /* Reduces button padding */
-        font-size: 0.9rem; /* Decreases font size */
-    }
-}
-
-/* Overlay for Mobile Nav */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 800;
-    transition: opacity 0.4s ease;
-}
-
-.overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #16213e;
-    padding: 1.5rem;
-    text-align: center;
-    color: #f1f1f1;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
-}
-
-footer a {
-    color: #e94560;
-    text-decoration: none;
-    font-weight: bold;
-}
 
-footer a:hover {
-    text-shadow: 0 0 5px #ff4b5c;
-}
+/* NAVBAR */
 
-/* Dark Button Styles */
-button {
-    background-color: #1b1b2f;
-    color: #fff;
-    border: 2px solid #e94560;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.4s ease, transform 0.3s ease;
+header{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(15,23,42,0.9);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-button:hover {
-    background-color: #e94560;
-    transform: scale(1.05);
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
 }
-
 
-/* Add scroll animation styles */
-.animate-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+.logo{
+font-size:22px;
+font-weight:600;
 }
 
-.animate-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+.nav-links{
+display:flex;
+gap:30px;
+list-style:none;
 }
 
-.animate-up:nth-child(odd) {
-    transition-delay: 0.2s;
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
 }
 
-.animate-up:nth-child(even) {
-    transition-delay: 0.4s;
+.nav-links a:hover{
+color:#38bdf8;
 }
 
-.nav-toggle {
-    background-color: #555;
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1100; /* Ensure it stays above the nav */
-    transition: background-color 0.3s ease;
-}
 
-.nav-toggle:hover {
-    background-color: #666;
-}
 
-button.nav-toggle {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
+/* HERO SECTION */
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 8%;
+min-height:100vh;
+gap:40px;
 }
 
-/* Intro Section */
-.intro {
-    padding: 100px 20px;
-    color: #fff;
-    height: 100vh;
-    display: flex;
-    justify-content: flex-end; /* Align content to the right */
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    text-align: right; /* Ensure text aligns to the right */
-    animation: fadeIn 2s ease-in-out; /* Fade in effect */
+.hero-left{
+max-width:600px;
 }
 
-.profile-picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%; /* Full height of the viewport */
-    width: auto;
-    object-fit: cover; /* Maintain aspect ratio */
-    z-index: 0;
-    opacity: 0.8; /* Optional: Slight transparency */
-    animation: fadeInAndScale 2s ease-in-out;
+.hero-left h1{
+font-size:48px;
+margin-bottom:10px;
 }
 
-.intro-content {
-    z-index: 1; /* Ensure content stays above the picture */
-    margin-right: 20px; /* Space from the right edge */
+.hero-left h3{
+font-size:22px;
+color:#38bdf8;
+margin-bottom:20px;
 }
 
-.intro h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    animation: slideInLeft 2s ease-in-out;
-    color: #fff;
+.hero-left p{
+opacity:0.8;
+margin-bottom:25px;
 }
 
-.intro p {
-    font-size: 1.7rem;
-    margin-bottom: 20px;
-    animation: slideInRight 2s ease-in-out;
-    color: #fff;
+.hero-buttons{
+display:flex;
+gap:15px;
 }
 
-.intro a.btn {
-    background-color: #e94560;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 15px 30px;
-    transition: background-color 0.4s, transform 0.4s;
-    z-index: 1; /* Ensure the button stays above the picture */
+.btn{
+background:#38bdf8;
+padding:12px 20px;
+border-radius:6px;
+color:#000;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
-.intro a.btn:hover {
-    background-color: #a83252;
-    transform: scale(1.1);
+.btn:hover{
+transform:translateY(-3px);
 }
 
-/* Section Styling */
-section {
-    padding: 60px 20px;
-    text-align: center;
+.btn-outline{
+border:2px solid #38bdf8;
+padding:10px 18px;
+border-radius:6px;
+text-decoration:none;
+color:#38bdf8;
+font-weight:600;
+transition:0.3s;
 }
 
-/* Animation Keyframes */
-@keyframes fadeInAndScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+.btn-outline:hover{
+background:#38bdf8;
+color:black;
 }
 
-#about h2, #about h3 {
-    margin-bottom: 20px; /* Adds space below headings */
+.hero-right img{
+width:320px;
+border-radius:15px;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
-#about p {
-    margin-bottom: 20px; /* Adds space between paragraphs */
-}
 
-#about ul.no-bullets li {
-    margin-bottom: 15px; /* Adds space between list items */
-}
 
-.container {
-    width: 100%; /* Full width */
-    max-width: none; /* Remove width constraint */
-    margin: 0; /* Remove centering margin */
-    padding: 20px 20px;
-    text-align: left; /* Align text to the left */
-    line-height: 1.8;
-}
+/* SECTIONS */
 
-.no-bullets {
-    list-style-type: none;
-    padding-left: 0;
+.section{
+padding:90px 8%;
+text-align:center;
 }
 
-.no-bullets li {
-    margin-bottom: 10px; /* Adds spacing between list items */
+.section h2{
+font-size:34px;
+margin-bottom:30px;
 }
 
-
-/* About Me Section */
-.about {
-    background-color: #0f3460;
-    color: #fff;
-    padding: 60px 20px;
-    animation: pullUp 1.5s ease-in-out;
+.section-desc{
+opacity:0.8;
+margin-bottom:40px;
 }
 
-.about h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
 
-.about p, .about ul {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-}
 
-.btn-view-certificate {
-    display: inline-block;
-    padding: 6px 12px; /* Reduced padding */
-    background-color: #e94560;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-left: 10px;
-    font-size: 0.9rem; /* Slightly smaller font size */
-    transition: background-color 0.4s, transform 0.4s;
-}
+/* ABOUT */
 
-.btn-view-certificate:hover {
-    background-color: #a83252;
-    transform: scale(1.05); /* Grow on hover */
+.about-text{
+max-width:700px;
+margin:auto;
+opacity:0.9;
 }
 
-#about {
-    text-align: left; /* Align text to the left */
-    margin: 0; /* Remove horizontal centering */
-    padding: 40px 20px;
-    width: 100%; /* Full width */
-    line-height: 1.6;
-}
-  
 
-.about ul {
-    list-style-type: none;
-}
 
-.about ul li {
-    margin: 15px 0;
-}
+/* PROJECTS */
 
-.education p {
-    margin-bottom: 15px; /* Adds space between qualifications */
-  }
-  
-/* Projects Section */
-.projects {
-    background-color: #16213e;
-    color: #fff;
-    padding: 60px 20px;
-    animation: pullUp 1.5s ease-in-out;
+.project-container{
+display:flex;
+gap:25px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-.projects h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+.project-card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+max-width:350px;
+text-align:left;
+transition:0.3s;
 }
 
-.project {
-    background-color: #1a1a2e;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 20px;
-    transition: transform 0.4s, box-shadow 0.4s;
-    animation: fadeInUp 1.5s ease-in-out;
+.project-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
-.project h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.project-links{
+margin-top:15px;
 }
 
-.project p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+.project-links a{
+text-decoration:none;
+color:#38bdf8;
+font-weight:600;
 }
 
-.project .btn {
-    background-color: #e94560;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 15px 30px;
-    display: inline-block;
-    transition: background-color 0.4s, transform 0.4s;
-}
 
-.project .btn:hover {
-    background-color: #a83252;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1.1);
-}
 
-/* Skills Section */
-.skills {
-    background-color: #0f3460;
-    color: #fff;
-    padding: 60px 20px;
-    animation: pullUp 1.5s ease-in-out;
-}
+/* SEMINAR HIGHLIGHT */
 
-.skills h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+.highlight{
+background:#020617;
 }
 
-.skill {
-    background-color: #1a1a2e;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 20px;
-    transition: transform 0.4s, box-shadow 0.4s;
-    animation: fadeInUp 1.5s ease-in-out;
+.seminar-gallery{
+display:flex;
+gap:25px;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:40px;
 }
 
-.skill h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.seminar-gallery img{
+width:320px;
+border-radius:12px;
+transition:0.3s;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-.skill ul {
-    list-style-type: none;
-    padding: 0;
+.seminar-gallery img:hover{
+transform:scale(1.05);
 }
 
-.skill ul li {
-    font-size: 1.3rem;
-    margin: 15px 0;
+.video-section{
+display:flex;
+justify-content:center;
 }
 
-/* Certificates Section */
-.certificates-page {
-    background-color: #0f3460;
-    color: #eaeaea;
-    padding: 60px 20px;
-    animation: pullUp 1.5s ease-in-out;
+.video-section video{
+width:600px;
+border-radius:15px;
+box-shadow:0 15px 40px rgba(0,0,0,0.7);
 }
 
-.certificates-page h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
 
-.certificate {
-    background-color: #1a1a2e;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 20px;
-    transition: transform 0.4s, box-shadow 0.4s;
-    animation: fadeInUp 1.5s ease-in-out;
-}
 
-.certificate h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
+/* SKILLS */
 
-.certificate p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:900px;
+margin:auto;
 }
 
-.certificate img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #444;
-    border-radius: 10px;
+.skill-card{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+transition:0.3s;
 }
 
-.certifications .pdf-btn {
-    background-color: #e94560;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.4s, transform 0.4s;
-    display: inline-block;
-    margin-top: 10px;
+.skill-card:hover{
+transform:translateY(-5px);
 }
 
-.certifications .pdf-btn:hover {
-    background-color: #a83252;
-    transform: scale(1.05);
-}
 
-.certifications .pdf-btn:active {
-    transform: scale(0.95);
-}
 
-/* Seminar Section Styling */
-.seminar-section {
-    padding: 80px 40px; /* Increased padding for more breathing space */
-    background-color: #1a1a2e;
-    color: #fff;
-}
+/* CONTACT */
 
-.seminar-section h2, .seminar-section h3 {
-    text-align: center;
-    margin-bottom: 50px; /* Added more margin below headings for spacing */
-    font-size: 2.5rem;
+.contact{
+background:#020617;
 }
 
-.seminar-images, .seminar-videos {
-    display: flex;
-    justify-content: space-evenly; /* Spread elements more evenly */
-    gap: 40px; /* Increased gap between images/videos */
-    flex-wrap: wrap;
-    padding: 20px 0; /* Added vertical padding for extra spacing */
+.contact-links{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
 }
 
-.seminar-img {
-    width: 320px; /* Slightly increased width */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
-    transition: transform 0.3s ease; /* Smooth scale animation */
+.contact-links a{
+text-decoration:none;
+color:#38bdf8;
+font-weight:600;
 }
 
-.seminar-img:hover {
-    transform: scale(1.05); /* Slight zoom on hover for interactivity */
-}
 
-.seminar-video {
-    width: 480px; /* Increased video width */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for videos too */
-    transition: transform 0.3s ease; /* Smooth scale animation */
-}
 
-.seminar-video:hover {
-    transform: scale(1.05); /* Slight zoom on hover for videos */
-}
+/* FOOTER */
 
-/* General Video Styling */
-video {
-    width: 100%; /* Make the video responsive to the width of the container */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure it doesn't exceed container width */
-    display: block; /* Removes inline element spacing */
-    margin: 0 auto; /* Centers the video */
-    border-radius: 8px; /* Optional: Rounded corners */
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+opacity:0.8;
 }
 
-/* Mobile-Specific Adjustments */
-@media (max-width: 768px) {
-    video {
-        width: 100%; /* Ensure video takes up full width on mobile */
-        height: auto; /* Maintain aspect ratio */
-        padding: 0; /* Remove any padding that may affect alignment */
-        margin: 0 auto; /* Center the video horizontally */
-    }
-}
 
 
-/* Contact Section */
-.contact {
-    background-color: #0f3460;
-    color: #fff;
-    padding: 60px 20px;
-    animation: pullUp 1.5s ease-in-out;
-}
+/* RESPONSIVE */
 
-.contact h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
+@media(max-width:900px){
 
-.contact p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+.hero{
+flex-direction:column;
+text-align:center;
 }
 
-.contact ul {
-    list-style-type: none;
-    padding: 0;
+.hero-right img{
+width:250px;
 }
 
-.contact ul li {
-    margin: 15px 0;
+.nav-links{
+display:none;
 }
 
-.contact a {
-    color: #e94560;
-    text-decoration: none;
+.video-section video{
+width:100%;
 }
 
-.contact a:hover {
-    text-decoration: underline;
 }
