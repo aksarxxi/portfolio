@@ -98,6 +98,20 @@ display:flex;
 gap:15px;
 }
 
+#typing::after{
+content:"|";
+margin-left:5px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+
+}
+
 .btn{
 background:#38bdf8;
 padding:12px 20px;
