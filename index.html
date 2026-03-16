@@ -142,10 +142,14 @@ and ability to present technical concepts.
 
 <div class="seminar-gallery">
 
-<img src="seminar image1.jpg" alt="Seminar Image">
+<img src="seminar image1.jpg" alt="Seminar Image" onclick="openImage(this.src)">
 
-<img src="seminar image2.jpg" alt="Seminar Image">
+<img src="seminar image2.jpg" alt="Seminar Image" onclick="openImage(this.src)">
 
+</div>
+
+<div id="imageViewer" class="image-viewer" onclick="closeImage()">
+<img id="viewerImg">
 </div>
 
 <div class="video-section">
@@ -352,6 +356,22 @@ LinkedIn
 <footer>
 <p>© 2026 Mohammed Aksar</p>
 </footer>
+
+<script>
+
+function openImage(src){
+const viewer = document.getElementById("imageViewer");
+const img = document.getElementById("viewerImg");
+
+img.src = src;
+viewer.style.display = "flex";
+}
+
+function closeImage(){
+document.getElementById("imageViewer").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
