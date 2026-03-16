@@ -69,6 +69,8 @@ align-items:center;
 padding:120px 8%;
 min-height:100vh;
 gap:40px;
+
+background:linear-gradient(135deg,#020617,#0f172a,#020617);
 }
 
 .hero-left{
@@ -128,10 +130,25 @@ color:black;
 .hero-right img{
 width:320px;
 border-radius:15px;
-box-shadow:0 15px 40px rgba(0,0,0,0.6);
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+animation:floatImage 4s ease-in-out infinite;
 }
 
+@keyframes floatImage{
 
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
 
 /* SECTIONS */
 
